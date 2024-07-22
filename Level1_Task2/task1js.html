@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic button change color</title>
+    <style>
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 34px 68px;
+            color: brown;
+            background-color: black;
+        }
+
+        .changecolor {
+            display: flex;
+            justify-content: center;
+            padding: 12px 23px;
+            font-size: 21px;
+            font-weight: bold;
+            display: block;
+            background-color: lightskyblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* button:hover {
+            background-color: wheat;
+        } */
+        .changecolor.clicked{
+            background-color: lightgreen;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <button class="changecolor">Change Color</button>
+    </div>
+    <script>
+      document.querySelector('.changecolor').addEventListener('click', function() {
+            this.classList.toggle('clicked');
+        });
+    </script>
+</body>
+
+</html>
