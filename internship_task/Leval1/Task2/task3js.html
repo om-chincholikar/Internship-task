@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplecalculator</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .calc {
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+            padding-top: 10px;
+            height: 234px;
+            width: 234px;
+            margin: auto;
+            background-color: wheat;
+            border: 2px solid black;
+        }
+
+        .num {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input {
+            width: 125px;
+            height: 45px;
+        }
+
+        input::placeholder {
+            height: 124px;
+            width: 234px;
+        }
+
+        .btn {
+            margin-top: 12px;
+            width: 45px;
+            height: 21px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 10px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calc">
+        <div class="num">
+            <input class="inp" type="number" placeholder=" Enter first number"></br>
+            <input class="inp" type="number" placeholder="Enter second number">
+        </div>
+        <div class="button">
+            <button class="btn" onclick="sum()">ADD</button>
+            <p class="result"></p>
+        </div>
+    </div>
+    <script>
+        function sum() {
+            const inputs = document.querySelectorAll(".inp")
+            const a = parseFloat(inputs[0].value)
+            const b = parseFloat(inputs[1].value)
+            const c = a + b;
+            document.querySelector(".result").textContent = 'sum is ' + c
+        }
+    </script>
+</body>
+
+</html>

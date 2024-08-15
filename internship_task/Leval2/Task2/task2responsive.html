@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Menu</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(65, 63, 63);
+            color: white;
+            padding: 12px;
+        }
+
+        .menu ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            list-style-type: none;
+            padding: 0 12vw;
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: larger;
+            color: white;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hamburge {
+            display: none;
+        }
+
+        .invert {
+            filter: invert();
+        }
+
+        .close {
+            display: none;
+        }
+
+        @media (max-width:810px) {
+            .hamburge {
+                display: block;
+                cursor: pointer;
+            }
+
+            .menu ul {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                flex-direction: column;
+                background-color: rgb(65, 63, 63);
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            ul li {
+                margin-bottom: 10px;
+            }
+            h1 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="heading">
+            <h1>Mark</h1>
+        </div>
+        <div class="menu">
+            <div class="list">
+                <ul>
+                    <li><a target="_blank" href="https://www.google.com">Google</a></li>
+                    <li><a target="_blank" href="https://www.youtube.com">youtube</a></li>
+                    <li><a target="_blank" href="https://www.instagram.com">instagram</a></li>
+                </ul>
+            </div>
+            <div class="hamburge">
+                <img class="invert" src="hamburger.svg" alt="this image can not shown">
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburge = document.querySelector('.hamburge');
+            const menu = document.querySelector('.menu ul');
+
+            hamburge.addEventListener('click', () => {
+                if (menu.style.display === 'flex') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'flex';
+                }
+            });
+        });
+    </script> 
+</body>
+
+</html>
